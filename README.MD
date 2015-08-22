@@ -14,8 +14,8 @@ or implement our own navigation framework this is the result from the later.
 ## Getting Started
 ```javascript
 //Create a new Navigator
-pageNavigator = new PageNavigator();
-//TO
+pageNavigator = new NavigatorJs.Navigator();
+//TODO
 ```
 
 ## Documentation

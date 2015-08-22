@@ -49,14 +49,14 @@ module NavigatorTs {
         }
     
         /*
-            public AddRecord(string)
+            public AddEntry(string)
             pageName string "The page"
             <summary>
                 Add page to the history.
             </summary>
             return number "current possition"
         */
-        public AddRecord(pageName: string) {
+        public AddEntry(pageName: string) {
             //Create a new page
             var page = new Page;
             page.name = pageName;

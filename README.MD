@@ -1,5 +1,6 @@
 # Navigator.ts
 *An open source single-page app navigation framework written in Typescript*
+
 **STATUS:** Unreleased
 
 ## Overview
@@ -14,7 +15,7 @@ or implement our own navigation framework this is the result from the later.
 ## Getting Started
 ```javascript
 //Create a new Navigator
-pageNavigator = new NavigatorJs.Navigator();
+pageNavigator = new NavigatorTs.Navigator();
 //TODO
 ```
 

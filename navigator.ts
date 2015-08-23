@@ -114,13 +114,25 @@ module NavigatorTs {
         }
 
         /*
+            public GetCurrentPage()
+            <summary>
+                Get the current page
+            </summary>
+            return Page "current page"
+        */
+        public GetCurrentPage(): Page {
+            //Return the current page
+            return this.history[this.position - 1];
+        }
+
+        /*
             public ClearHistory()
             <summary>
                 Clears the history and resets the position.
             </summary>
         */
-        public ClearHistory() {
-            if((typeof this.history !== 'undefined' && this.history) && this.history.length > 0){
+        public ClearHistory(): void {
+            if ((typeof this.history !== 'undefined' && this.history) && this.history.length > 0) {
                 var p = this.history[this.position - 1];
                 this.history = [];
                 this.history[0] = p;

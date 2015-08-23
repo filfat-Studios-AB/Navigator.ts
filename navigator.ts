@@ -25,11 +25,11 @@ module NavigatorTs {
         private position: number;
 
         /*
-            public Navigator()
+            public Navigator(void)
             <summary>
                 Set's everything to the default state.
             </summary>
-            a Navigator object.
+            return Navigator "A Navigator object".
         */
         constructor() {
             this.ClearHistory();
@@ -41,7 +41,7 @@ module NavigatorTs {
         }
     
         /*
-            public GoBack()
+            public GoBack(void)
             <summary>
                 Navigates backward.
             </summary>
@@ -67,7 +67,7 @@ module NavigatorTs {
         }
     
         /*
-            public GoForward()
+            public GoForward(void)
             <summary>
                 Navigates forward.
             </summary>
@@ -114,7 +114,7 @@ module NavigatorTs {
         }
 
         /*
-            public GetCurrentPage()
+            public GetCurrentPage(void)
             <summary>
                 Get the current page
             </summary>
@@ -126,7 +126,7 @@ module NavigatorTs {
         }
 
         /*
-            public ClearHistory()
+            public ClearHistory(void)
             <summary>
                 Clears the history and resets the position.
             </summary>

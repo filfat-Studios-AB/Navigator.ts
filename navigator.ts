@@ -41,13 +41,13 @@ module NavigatorTs {
         }
     
         /*
-            public GoBack(string)
+            public GoBack()
             <summary>
                 Navigates backward.
             </summary>
             return string "page name after navigation"
         */
-        public GoBack() {
+        public GoBack(): string {
             //Check if history is empty
             if (this.history.length < 1) {
                 return null;
@@ -67,13 +67,13 @@ module NavigatorTs {
         }
     
         /*
-            public GoForward(string)
+            public GoForward()
             <summary>
                 Navigates forward.
             </summary>
             return string "page name after navigation"
         */
-        public GoForward() {
+        public GoForward(): string {
             //Check if history is empty
             if (this.history.length < 1) {
                 return null;
@@ -100,7 +100,7 @@ module NavigatorTs {
             </summary>
             return number "current possition"
         */
-        public AddEntry(pageName: string) {
+        public AddEntry(pageName: string): number {
             //Create a new page
             var page = new Page;
             page.name = pageName;

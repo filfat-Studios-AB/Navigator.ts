@@ -8,7 +8,7 @@
         Base module for the Navigator.ts framework
     <summary>
 */
-module NavigatorTs {
+modul NavigatorTs {
     /*
         Navigator
         <summary>

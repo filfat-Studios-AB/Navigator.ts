@@ -9,7 +9,7 @@ This meant that we had to options switch from injecting sub pages directly into 
 (this meant that Music playback would stop as soon as you navigated away from the current page, so this weren't really an option)
 or implement our own navigation framework this is the result from the later.
 
-**it does but it's really only extensively used in tablet mode... so far...*
+**it does; but it's really only extensively used in tablet mode... so far...*
 
 ## Getting Started
 ```javascript

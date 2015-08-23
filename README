@@ -42,7 +42,8 @@ pageNavigator.GoForward();
 ```
 npm install -g typescript
 ```
-2. Navigate to the root of Navigator.ts and type
+2. Create a new file and name it ```app.js```
+3. Navigate to the root of Navigator.ts and type
 ```
-tsc --out navigator.js navigator.ts -t ES5
+tsc --out navigator.js app.ts navigator.ts -t ES5
 ```

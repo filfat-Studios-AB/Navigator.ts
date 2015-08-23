@@ -1,0 +1,123 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans';
+	background: #fff;
+	overflow-x: hidden;
+}
+
+header{
+	position: fixed;
+	top: 0; left: 0;
+	padding: 0 25px;
+	width: calc(100% - 50px);
+	height: 65px;
+	color: white;
+	-webkit-transition: 450ms; /* Safari */
+    transition: 450ms;
+}
+header .brand{
+	float: left;
+	width: 180px;
+}
+header .brand img{
+	height: 45px;
+	margin-top: 10px;
+}
+header nav{
+	float: right;
+}
+header nav ul li{
+	display: inline;
+	margin-left: 45px;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: 300;
+	text-align: center;
+	list-style-type: none;
+}
+header nav ul li a{
+	color: white;
+	text-decoration: none;
+}
+header nav ul li a:hover{
+	text-decoration: underline;
+}
+header.fixed{
+	background: white;
+	border-bottom: 1px solid lightgray;
+}
+header.fixed nav ul li a{
+	color: black;
+}
+header.fixed nav ul li a:hover{
+	color: rgba(0, 0, 0, 0.55);
+	text-decoration: none;
+}
+
+/* Content
+=========================*/
+.content{
+	width: 100%;
+	height: 100%;
+}
+.content .banner{
+	height: 380px;
+	width: 100%;
+	padding-top: 65px;
+	background: url('../assets/background.jpg') center no-repeat;
+	background-size: cover;
+}
+.content .banner .title h1{
+	font-size:  56px;
+	font-weight: 300;
+	font-style: normal;
+	color: #0A2545;
+	text-align: center;
+}
+.content .banner .description h2{
+	padding: 5px 35px;
+	font-size:  36px;
+	font-weight: 300;
+	font-style: normal;
+	color: #0A2545;
+	text-align: center;
+}
+.content .banner .action{
+	width: 220px;
+	margin: 0 auto;
+	padding: 5px 15px;
+	border: 3px solid #0A2545;
+	text-align: center;
+	text-transform: uppercase;
+	-webkit-transition: 250ms; /* Safari */
+    transition: 250ms;
+}
+.content .banner .action:hover{
+	background: #0A2545;
+}
+.content .banner .action:hover a{
+	color: white;
+}
+.content .banner .action a{
+	font-size: 28px;
+	font-weight: 300;
+	text-decoration: none;
+	color: #0A2545;
+}
+.content .warn{
+	width: 100%;
+	font-size: 26px;
+	text-align: center;
+}
+
+/* Mobile */
+@media only screen and (max-width: 625px){
+	.content .banner .description h2{
+		padding: 0 15px 15px 15px;
+		font-size:  42px;
+	}
+	.content .warn{
+		font-size: 20px;
+	}
+}

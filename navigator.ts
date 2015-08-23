@@ -106,8 +106,7 @@ module NavigatorTs {
             page.name = pageName;
 
             //Add the page to the history
-            var lenght = this.history.length;
-            this.history[lenght] = page;
+            this.history.push(page);
 
             //Navigate to the page
             this.GoForward();

@@ -12,6 +12,8 @@ or implement our own navigation framework this is the result from the later.
 
 **it does; but it's really only extensively used in tablet mode... so far...*
 
+Currently the framework only handles the navigation and not page loading, etc. However this functionality is planned to be added before version 1.0
+
 ## Getting Started
 ```javascript
 //Create a new Navigator

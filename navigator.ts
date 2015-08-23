@@ -37,7 +37,6 @@ module NavigatorTs {
                 console.log('pageName:' + pageName);
                 console.log('position: ' + this.position);
                 console.log('history.length: ' + this.history.length);
-                alert(this.position);
             }
         }
     

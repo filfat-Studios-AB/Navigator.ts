@@ -16,14 +16,28 @@ module NavigatorTs {
         <summary>
     */
     export class Navigator {
+        //Handles navigation
+        public NavigationHandler: Function;
         //Page history
         private history: Page[];
-        //Position in the history (0 = first)
+        //Position in the history (1 = first)
         private position: number;
 
+        /*
+            public Navigator()
+            <summary>
+                Set's everything to the default state.
+            </summary>
+            a Navigator object.
+        */
         constructor() {
-            this.history = [];
-            this.position = 0;
+            this.ClearHistory();
+            this.NavigationHandler = function (pageName) {
+                console.log('pageName:' + pageName);
+                console.log('position: ' + this.position);
+                console.log('history.length: ' + this.history.length);
+                alert(this.position);
+            }
         }
     
         /*
@@ -34,7 +48,22 @@ module NavigatorTs {
             return string "page name after navigation"
         */
         public GoBack() {
-            return 'page name';
+            //Check if history is empty
+            if (this.history.length < 1) {
+                return null;
+            }
+
+            //Make sure we dont go out of scope
+            if (this.position - 1 < 1) {
+                this.position = 2;
+            }
+            
+            //Navigate to the new page
+            this.position -= 1;
+            this.NavigationHandler(this.history[this.position - 1].name);
+
+            //Return the current page's name
+            return this.history[this.position - 1].name;
         }
     
         /*
@@ -45,7 +74,22 @@ module NavigatorTs {
             return string "page name after navigation"
         */
         public GoForward() {
-            return 'page name';
+            //Check if history is empty
+            if (this.history.length < 1) {
+                return null;
+            }
+
+            //Make sure we dont go out of scope
+            if (this.position + 1 > this.history.length) {
+                this.position = this.history.length - 1;
+            }
+
+            //Navigate to the new page
+            this.position += 1;
+            this.NavigationHandler(this.history[this.position - 1].name);
+
+            //Return the current page's name
+            return this.history[this.position - 1].name;
         }
     
         /*
@@ -67,22 +111,29 @@ module NavigatorTs {
 
             //Navigate to the page
             this.GoForward();
+            return this.position;
         }
 
         /*
-            public ClearHistory(string)
+            public ClearHistory()
             <summary>
                 Clears the history and resets the position.
             </summary>
         */
         public ClearHistory() {
-            this.history = [];
-            this.position = 0;
+            if((typeof this.history !== 'undefined' && this.history) && this.history.length > 0){
+                var p = this.history[this.position - 1];
+                this.history = [];
+                this.history[0] = p;
+            }
+            else
+                this.history = [];
+            this.position = 1;
         }
     }
 
     /*
-        PageNavigator
+        Page
         <summary>
             Class for general page objects.
         <summary>

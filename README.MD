@@ -1,7 +1,6 @@
 # Navigator.ts
 *An open source single-page app navigation framework written in Typescript*
 
-**STATUS:** Unreleased
 
 ## Overview
 During our development of [Playstr](https://www.playstr.link) we ran into a problem,

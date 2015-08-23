@@ -15,7 +15,23 @@ or implement our own navigation framework this is the result from the later.
 ```javascript
 //Create a new Navigator
 pageNavigator = new NavigatorTs.Navigator();
-//TODO
+
+//Hook our own navigation function
+pageNavigator.NavigationHandler = function(pageName: string) {
+    alert(pageName);
+}
+
+//Do some navigation
+pageNavigator.AddEntry('Page1');
+pageNavigator.AddEntry('Page2');
+pageNavigator.AddEntry('Page3');
+
+//Go back twice then forward
+pageNavigator.GoBack();
+pageNavigator.GoBack();
+pageNavigator.GoForward();
+
+/* We're now at Page2 */
 ```
 
 ## Documentation

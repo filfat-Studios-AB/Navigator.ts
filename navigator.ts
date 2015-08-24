@@ -10,6 +10,7 @@
     <summary>
 */
 module NavigatorTs {
+
     /*
         Navigator
         <summary>
@@ -37,6 +38,7 @@ module NavigatorTs {
                 console.log('pageName:' + pageName);
                 console.log('position: ' + this.position);
                 console.log('history.length: ' + this.history.length);
+                console.log('-------------------------');
             }
         }
     
@@ -45,9 +47,9 @@ module NavigatorTs {
             <summary>
                 Navigates backward.
             </summary>
-            return string "page name after navigation"
+            return Page "page after navigation"
         */
-        public GoBack(): string {
+        public GoBack(): Page {
             //Check if history is empty
             if (this.history.length < 1) {
                 return null;
@@ -63,7 +65,7 @@ module NavigatorTs {
             this.NavigationHandler(this.history[this.position - 1].name);
 
             //Return the current page's name
-            return this.history[this.position - 1].name;
+            return this.history[this.position - 1];
         }
     
         /*
@@ -71,9 +73,9 @@ module NavigatorTs {
             <summary>
                 Navigates forward.
             </summary>
-            return string "page name after navigation"
+            return Page "page after navigation"
         */
-        public GoForward(): string {
+        public GoForward(): Page {
             //Check if history is empty
             if (this.history.length < 1) {
                 return null;
@@ -89,7 +91,7 @@ module NavigatorTs {
             this.NavigationHandler(this.history[this.position - 1].name);
 
             //Return the current page's name
-            return this.history[this.position - 1].name;
+            return this.history[this.position - 1];
         }
     
         /*
@@ -105,8 +107,14 @@ module NavigatorTs {
             var page = new Page;
             page.name = pageName;
 
-            //Add the page to the history
-            this.history.push(page);
+            if (this.history.length == this.position || this.history.length == 0) {
+                //Add the page to the history
+                this.history.push(page);
+            }
+            else {
+                this.history.length = this.position;
+                this.history.push(page);
+            }
 
             //Navigate to the page
             this.GoForward();

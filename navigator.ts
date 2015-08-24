@@ -1,4 +1,4 @@
-﻿//   Navigator.ts
+//   Navigator.ts
 //   © 2015 filfat Studios AB
 //   Version 0.1
 //   See https://github.com/filfat-Studios-AB/Navigator.ts

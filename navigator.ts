@@ -1,7 +1,9 @@
 //   Navigator.ts
-//   © 2015 filfat Studios AB
-//   Version 0.1
-//   See https://github.com/filfat-Studios-AB/Navigator.ts
+//   Copyright © 2015 filfat Studios AB
+//   Version: 0.1
+//   License: MIT
+//   Repo:    https://github.com/filfat-Studios-AB/Navigator.ts
+//   Website: https://www.navigatorts.org
 
 /*
     NavigatorTs
@@ -34,8 +36,9 @@ module NavigatorTs {
         */
         constructor() {
             this.ClearHistory();
-            this.NavigationHandler = function (pageName) {
-                console.log('pageName:' + pageName);
+            this.NavigationHandler = function (page: Page) {
+                console.log('page.name:' + page.name);
+                console.log('page.uri:' + page.uri);
                 console.log('position: ' + this.position);
                 console.log('history.length: ' + this.history.length);
                 console.log('-------------------------');
@@ -96,22 +99,27 @@ module NavigatorTs {
     
         /*
             public AddEntry(string)
-            pageName string "The page"
+            name string "The name of the page"
+            uri string "URI to the page, if null it'll default to the name"
+            data Object "any extra data required by the page, if null it'll default to null"
             <summary>
                 Add page to the history.
             </summary>
             return number "current possition"
         */
-        public AddEntry(pageName: string): number {
+        public AddEntry(name: string, uri: string, data: Object): number {
             //Create a new page
             var page = new Page;
-            page.name = pageName;
+            page.name = name;
+            page.uri = (typeof uri !== 'undefined') ? uri : page.name;
+            page.data = (typeof data !== 'undefined') ? data : null;
 
             if (this.history.length == this.position || this.history.length == 0) {
                 //Add the page to the history
                 this.history.push(page);
             }
             else {
+                //Remove pages in front of the one being added
                 this.history.length = this.position;
                 this.history.push(page);
             }
@@ -160,5 +168,9 @@ module NavigatorTs {
     class Page {
         //The name of the page
         public name: string;
+		//The URI
+		public uri: string;
+        //Data
+        public data: Object = {};
     }
 }

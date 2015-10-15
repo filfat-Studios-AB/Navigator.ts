@@ -98,7 +98,7 @@ module NavigatorTs {
         }
     
         /*
-            public AddEntry(string)
+            public AddEntry(string, string, Object)
             name string "The name of the page"
             uri string "URI to the page, if null it'll default to the name"
             data Object "any extra data required by the page, if null it'll default to null"
